@@ -34,7 +34,7 @@ const Ticket = ({
   const categoryIcon = () => {
     switch (category) {
       case "Wifi":
-        return <WifiIcon sx={{ fontSize: "54px", color: "red" }} />;
+        return <WifiIcon sx={{ fontSize: "54px", color: "#f44336" }} />;
       case "Electricity":
         return <ElectricIcon sx={{ fontSize: "54px", color: "orange" }} />;
       case "Water":
@@ -96,24 +96,24 @@ const Ticket = ({
                     borderRadius: "8px",
                     backgroundColor:
                       status === "Opened"
-                        ? "green"
+                        ? "#4caf50"
                         : status === "Raised"
-                        ? "red"
+                        ? "#f44336"
                         : "#616161",
                     "&:hover": {
                       backgroundColor:
                         status === "Opened"
-                          ? "green"
+                          ? "#4caf50"
                           : status === "Raised"
-                          ? "red"
+                          ? "#f44336"
                           : "#616161",
                     },
                     "&:active": {
                       backgroundColor:
                         status === "Opened"
-                          ? "green"
+                          ? "#4caf50"
                           : status === "Raised"
-                          ? "red"
+                          ? "#f44336"
                           : "#616161",
                     },
                   }}
