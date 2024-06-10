@@ -279,7 +279,7 @@ const AddResidents = () => {
               Back
             </Button>
             {activeStep === steps.length - 1 ? (
-              <Button type="submit" variant="contained" color="primary">
+              <Button type="submit" variant="contained" color="primary" onClick={()=>{window.location.reload()}}>
                 Submit
               </Button>
             ) : (
