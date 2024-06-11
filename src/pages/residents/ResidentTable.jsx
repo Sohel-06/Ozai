@@ -26,7 +26,166 @@ import EditIcon from "@mui/icons-material/Edit";
 import BadgeIcon from "@mui/icons-material/Badge";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 
-const ResidentTable = ({ data }) => {
+const data = [
+  {
+    id: 1,
+    name: "John Doe",
+    profilePic:
+      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cGVyc29ufGVufDB8fDB8fHww",
+    property: "Property A",
+    room: "101",
+    employeeId: "E001",
+    joinDate: "2021-01-01",
+    worksite: "Site A",
+    userStatus: "Active",
+    bed: 1,
+  },
+  {
+    id: 2,
+    name: "Jane Smith",
+    profilePic:
+      "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww",
+    property: "Property B",
+    room: "202",
+    employeeId: "E002",
+    joinDate: "2021-02-01",
+    worksite: "Site B",
+    userStatus: "Inactive",
+    bed: 2,
+  },
+  {
+    id: 3,
+    name: "Ervin Howell",
+    profilePic:
+      "https://images.unsplash.com/photo-1491349174775-aaafddd81942?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHBlcnNvbnxlbnwwfHwwfHx8MA%3D%3D",
+    property: "Property C",
+    room: "103",
+    employeeId: "E003",
+    joinDate: "2021-01-01",
+    worksite: "Site A",
+    userStatus: "Active",
+    bed: 3,
+  },
+  {
+    id: 4,
+    name: "Clementine Bauch",
+    profilePic:
+      "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHBlcnNvbnxlbnwwfHwwfHx8MA%3D%3D",
+    property: "Property D",
+    room: "203",
+    employeeId: "E004",
+    joinDate: "2021-02-01",
+    worksite: "Site B",
+    userStatus: "Inactive",
+    bed: 4,
+  },
+  {
+    id: 5,
+    name: "Patricia Lebsack",
+    profilePic:
+      "https://images.unsplash.com/profile-fb-1687954839-16fde341840a.jpg?bg=fff&crop=faces&dpr=1&h=64&w=64&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    property: "Property A",
+    room: "106",
+    employeeId: "E005",
+    joinDate: "2021-01-01",
+    worksite: "Site A",
+    userStatus: "Active",
+    bed: 5,
+  },
+  {
+    id: 6,
+    name: "Chelsey Dietrich",
+    profilePic:
+      "https://images.unsplash.com/profile-1569790029351-5adb76747654image?bg=fff&crop=faces&dpr=1&h=64&w=64&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    property: "Property B",
+    room: "206",
+    employeeId: "E007",
+    joinDate: "2021-02-01",
+    worksite: "Site B",
+    userStatus: "Inactive",
+    bed: 6,
+  },
+  {
+    id: 1,
+    name: "John Doe",
+    profilePic:
+      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cGVyc29ufGVufDB8fDB8fHww",
+    property: "Property A",
+    room: "101",
+    employeeId: "E001",
+    joinDate: "2021-01-01",
+    worksite: "Site A",
+    userStatus: "Active",
+    bed: 1,
+  },
+  {
+    id: 2,
+    name: "Jane Smith",
+    profilePic:
+      "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww",
+    property: "Property B",
+    room: "202",
+    employeeId: "E002",
+    joinDate: "2021-02-01",
+    worksite: "Site B",
+    userStatus: "Inactive",
+    bed: 2,
+  },
+  {
+    id: 3,
+    name: "Ervin Howell",
+    profilePic:
+      "https://images.unsplash.com/photo-1491349174775-aaafddd81942?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHBlcnNvbnxlbnwwfHwwfHx8MA%3D%3D",
+    property: "Property C",
+    room: "103",
+    employeeId: "E003",
+    joinDate: "2021-01-01",
+    worksite: "Site A",
+    userStatus: "Active",
+    bed: 3,
+  },
+  {
+    id: 4,
+    name: "Clementine Bauch",
+    profilePic:
+      "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHBlcnNvbnxlbnwwfHwwfHx8MA%3D%3D",
+    property: "Property D",
+    room: "203",
+    employeeId: "E004",
+    joinDate: "2021-02-01",
+    worksite: "Site B",
+    userStatus: "Inactive",
+    bed: 4,
+  },
+  {
+    id: 5,
+    name: "Patricia Lebsack",
+    profilePic:
+      "https://images.unsplash.com/profile-fb-1687954839-16fde341840a.jpg?bg=fff&crop=faces&dpr=1&h=64&w=64&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    property: "Property A",
+    room: "106",
+    employeeId: "E005",
+    joinDate: "2021-01-01",
+    worksite: "Site A",
+    userStatus: "Active",
+    bed: 5,
+  },
+  {
+    id: 6,
+    name: "Chelsey Dietrich",
+    profilePic:
+      "https://images.unsplash.com/profile-1569790029351-5adb76747654image?bg=fff&crop=faces&dpr=1&h=64&w=64&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    property: "Property B",
+    room: "206",
+    employeeId: "E007",
+    joinDate: "2021-02-01",
+    worksite: "Site B",
+    userStatus: "Inactive",
+    bed: 6,
+  },
+];
+
+const ResidentTable = () => {
   const columns = useMemo(
     () => [
       {

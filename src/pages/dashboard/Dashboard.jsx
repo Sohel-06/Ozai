@@ -1,16 +1,12 @@
 import React from "react";
 import PeopleIcon from "@mui/icons-material/People";
 import ApartmentIcon from "@mui/icons-material/Apartment";
-import TrendingDownIcon from "@mui/icons-material/TrendingDown";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 import ConfirmationNumberIcon from "@mui/icons-material/ConfirmationNumber";
 import MedicalInformationIcon from "@mui/icons-material/MedicalInformation";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import CampaignIcon from "@mui/icons-material/Campaign";
-
-import DeliveryImage from "../delivery.svg";
-
 import {
   Grid,
   Typography,
@@ -21,8 +17,6 @@ import {
   Divider,
   IconButton,
 } from "@mui/material";
-import CustomPieChart from "./CustomPieChart";
-import CustomBarChart from "./CustomBarChart";
 import ChartSelector from "./ChartSelector";
 
 const Card = ({ label, amount, description, icon: Icon, className }) => {
@@ -476,6 +470,7 @@ const Dashboard = () => {
                         // maxHeight: "100%",
                         maxWidth: "100%",
                       }}
+                      alt="updates"
                     />
                   </Grid>
                 </Grid>
@@ -496,6 +491,7 @@ const Dashboard = () => {
                   borderRadius: "8px",
                   boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
                 }}
+                alt="transportation"
               />
             </Grid>
           </Grid>

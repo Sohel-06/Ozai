@@ -20,7 +20,6 @@ import {
   StepLabel,
   Step,
   TextField,
-  DialogActions,
   StepContent,
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
@@ -66,10 +65,6 @@ const AddPropertyPopup = ({ open, onClose }) => {
     }));
   };
 
-  const handleSubmit = () => {
-    // Handle form submission, e.g., send data to backend
-    onClose();
-  };
 
   const steps = [
     {
@@ -82,9 +77,6 @@ const AddPropertyPopup = ({ open, onClose }) => {
     },
   ];
 
-  const handleReset = () => {
-    setActiveStep(0);
-  };
 
   return (
     <Dialog open={open} onClose={onClose}>

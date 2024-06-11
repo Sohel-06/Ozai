@@ -3,11 +3,8 @@ import {
   List,
   ListItem,
   ListItemText,
-  ListItemAvatar,
-  Avatar,
   Typography,
   Divider,
-  Collapse,
   IconButton,
   Grid,
   Box,
@@ -16,12 +13,7 @@ import {
   Dialog,
   DialogTitle,
   DialogContent,
-  Stepper,
-  StepLabel,
-  Step,
   TextField,
-  DialogActions,
-  StepContent,
   FormControl,
   InputLabel,
   Select,
@@ -165,14 +157,7 @@ const AddWorksitePopup = ({ open, onClose }) => {
 };
 
 const WorkSites = () => {
-  const [expanded, setExpanded] = React.useState({});
   const [hoveredCard, setHoveredCard] = React.useState(null);
-  const handleExpand = (propertyId) => {
-    setExpanded((prevExpanded) => ({
-      ...prevExpanded,
-      [propertyId]: !prevExpanded[propertyId],
-    }));
-  };
 
   const properties = [
     {
@@ -397,7 +382,6 @@ const WorkSites = () => {
               <ListItem
                 alignItems="center"
                 sx={{ paddingTop: "4px", paddingBottom: "4px" }}
-                onClick={() => handleExpand(property.id)}
               >
                 <Box style={{ flex: 1, marginRight: "16px" }}>
                   <img

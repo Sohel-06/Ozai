@@ -1,6 +1,18 @@
-import React, { useState } from 'react';
-import { Container, Paper, Typography, TextField, Button, Grid, Link, IconButton, InputAdornment, Divider } from '@mui/material';
-import { Visibility, VisibilityOff } from '@mui/icons-material';
+import React, { useState } from "react";
+import {
+  Container,
+  Paper,
+  Typography,
+  TextField,
+  Button,
+  Grid,
+  Link,
+  IconButton,
+  InputAdornment,
+  Divider,
+  Box,
+} from "@mui/material";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
 
 const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -19,15 +31,48 @@ const LoginPage = () => {
   };
 
   return (
-    <Container maxWidth="sm" style={{ height: "100vh", display: "flex", alignItems: "center" }}>
-      <Paper elevation={3} sx={{ padding: 4, width: "100%", textAlign: "center",borderRadius:"8px" }}>
+    <Container
+      maxWidth="sm"
+      style={{
+        height: "100vh",
+        display: "flex",
+        alignItems: "center",
+      }}
+    >
+      <Paper
+        elevation={3}
+        sx={{
+          padding: 4,
+        //   paddingTop:0,
+          width: "100%",
+          textAlign: "center",
+          borderRadius: "8px",
+        }}
+      >
+        {/* <img src="https://play-lh.googleusercontent.com/ll9GSsdfSo90lktstQ1XlAbJeenm_mw0xztZzZYxUPF51Hf4L_oUZR99WeXanG4OwGk=w240-h480-rw" width={"120px"} height={"120px"}/> */}
+        <Grid container spacing={2} alignItems="center" justifyContent={"space-between"}>
+   
+    <Grid item>
+      <Box sx={{textAlign:"start"}}>
         <Typography variant="h4" gutterBottom>
-          {showSignUp ? 'Register Now' : 'Welcome Back!'}
+          {showSignUp ? "Register Now" : "Welcome Back!"}
         </Typography>
         <Typography variant="body1" gutterBottom>
-          {showSignUp ? 'Create your account' : 'Log in to your account'}
+          {showSignUp ? "Create your account" : "Log in to your account"}
         </Typography>
-        <Divider sx={{mt:1}}/>
+      </Box>
+    </Grid>
+    <Grid item>
+      <img
+        src="https://play-lh.googleusercontent.com/ll9GSsdfSo90lktstQ1XlAbJeenm_mw0xztZzZYxUPF51Hf4L_oUZR99WeXanG4OwGk=w240-h480-rw"
+        width={"120px"}
+        height={"120px"}
+      />
+    </Grid>
+  </Grid>
+
+
+        <Divider sx={{ mt: 1 }} />
         <form style={{ marginTop: 16 }}>
           {showSignUp ? (
             <>
@@ -67,7 +112,10 @@ const LoginPage = () => {
                 Sign Up
               </Button>
               <Typography variant="body2" style={{ marginTop: 16 }}>
-                Already have an account? <Link href="#" onClick={handleLoginClick}>Log in</Link>
+                Already have an account?{" "}
+                <Link href="#" onClick={handleLoginClick}>
+                  Log in
+                </Link>
               </Typography>
             </>
           ) : (
@@ -84,25 +132,20 @@ const LoginPage = () => {
                 <Grid item xs={12}>
                   <TextField
                     fullWidth
-                    type={showPassword ? 'text' : 'password'}
+                    type={showPassword ? "text" : "password"}
                     label="Password"
                     variant="outlined"
                     required
                     InputProps={{
                       endAdornment: (
                         <InputAdornment position="end">
-                          <IconButton
-                            onClick={handleTogglePassword}
-                            edge="end"
-                          >
+                          <IconButton onClick={handleTogglePassword} edge="end">
                             {showPassword ? <VisibilityOff /> : <Visibility />}
                           </IconButton>
                         </InputAdornment>
-                      )
+                      ),
                     }}
-                    
                   />
-
                 </Grid>
                 <Grid item xs={12} textAlign={"end"}>
                   <Link href="#" variant="body2">
@@ -110,14 +153,22 @@ const LoginPage = () => {
                   </Link>
                 </Grid>
                 <Grid item xs={12}>
-                  <Button fullWidth variant="contained" color="primary" type="submit">
+                  <Button
+                    fullWidth
+                    variant="contained"
+                    color="primary"
+                    type="submit"
+                  >
                     Login
                   </Button>
                 </Grid>
-               
+
                 <Grid item xs={12}>
                   <Typography variant="body2">
-                    Don't have an account? <Link href="#" onClick={handleSignUpClick}>Sign up now</Link>
+                    Don't have an account?{" "}
+                    <Link href="#" onClick={handleSignUpClick}>
+                      Sign up now
+                    </Link>
                   </Typography>
                 </Grid>
               </Grid>
@@ -127,6 +178,6 @@ const LoginPage = () => {
       </Paper>
     </Container>
   );
-}
+};
 
 export default LoginPage;
